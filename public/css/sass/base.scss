@@ -1,3 +1,7 @@
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+
 *{
   margin: 0;
   padding: 0;
@@ -19,6 +23,7 @@ a{
 header, nav, #content, footer{
   width: 102.4rem;
   margin: 0 auto;
+  margin-top: $spacing-medium;
 }
 
 header{
@@ -34,20 +39,41 @@ header{
       }
 
       &:hover, &:active, &:focus{
-        
+        color: #333;        
       }
     }
   }
 }
 
 nav{
-  
+  border-top: 0.1rem solid #000;
+  border-bottom: 0.3rem double #000;
+
   ul{
     margin: 0 auto;
 
     li{
       list-style: none outside none;
       display: inline-block;
+      margin-right: $spacing-medium;
+      padding: $spacing-small $spacing-medium;
+      transition: background 0.3s ease-in-out;
+
+      &:last-child{
+        margin-right: 0;
+      }
+
+      &:hover{
+        background-color: #000;
+        
+        a{
+          color: #FFF;
+        }
+      }
+
+      a{
+        color: #000;
+      }
     }
   }
 }
