@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="/js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Blog</a></h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <footer>
+      <p>&copy; 2014 Blog</p>
+    </footer>
+  </body>
+</html>
