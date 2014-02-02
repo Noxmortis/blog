@@ -1,5 +1,8 @@
 require 'sinatra'
 require 'sass'
+require 'sinatra/activerecord'
+require './config/environments'
+require './models/post'
 
 before do
   @theme = 'base'
