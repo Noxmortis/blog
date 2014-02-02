@@ -6,6 +6,7 @@ require './models/post'
 
 before do
   @username = 'noxmortis'
+  # Get these from config file later on
   @theme = 'simple'
   @title_font = 'Alike+Angular'
   @body_font = 'Anaheim'
