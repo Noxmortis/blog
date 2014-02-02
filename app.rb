@@ -19,3 +19,8 @@ end
 get '/admin' do
   erb :'admin/index'
 end
+
+not_found do
+  status 404
+  erb :notfound
+end
