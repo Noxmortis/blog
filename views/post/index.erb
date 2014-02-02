@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+<div class="post">
+  <% if post.title %>
+  <section>
+    <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+  <% end %>
+  <%= post.date.strftime('%Y-%m-%d %H:%M') %>
+  <%= post.content %>
+  <%= post.tags %>
+  <%= post.likes %>
+  <% if post.title %></section><% end %>
+</div>
+<% end %>

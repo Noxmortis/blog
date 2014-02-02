@@ -12,8 +12,12 @@ html{
 }
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Anaheim', Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Alike Angular", serif;
 }
 
 a{
@@ -23,13 +27,12 @@ a{
 header, nav, #content, footer{
   width: 102.4rem;
   margin: 0 auto;
-  margin-top: $spacing-medium;
+  margin-top: $spacing-large;
 }
 
 header{
 
   h1{
-    font-family: "Alike Angular", serif;
 
     a{
       
@@ -48,6 +51,7 @@ header{
 nav{
   border-top: 0.1rem solid #000;
   border-bottom: 0.3rem double #000;
+  height: 3.3rem;
 
   ul{
     margin: 0 auto;
@@ -56,14 +60,9 @@ nav{
       list-style: none outside none;
       display: inline-block;
       padding: $spacing-small 1.5rem;
-      transition: background 0.3s ease-in-out;
 
       &:hover{
-        background-color: #000;
-        
-        a{
-          color: #FFF;
-        }
+        border-bottom: 0.2rem solid #000;
       }
 
       a{
@@ -75,9 +74,38 @@ nav{
 
 #content{
   
-  h2{
-    font-family: "Alike Angular", serif;
-    text-shadow: 0.1rem 0.1rem #999;
+  .post{
+    margin-bottom: $spacing-large;
+    padding: $spacing-large 0;
+    border-top: 0.1rem dotted #000;
+    border-bottom: 0.1rem dotted #000;
+
+    h2{
+      text-shadow: 0.1rem 0.1rem #999;
+      margin-bottom: $spacing-medium;
+
+      a{
+        color: #000;
+
+        &:link, &:visited{
+
+        }
+
+        &:hover, &:active, &:focus{
+          text-shadow: 0.1rem 0.1rem #FFF;
+        }
+      }
+    }
+
+    img{
+      margin: 0 auto;
+      display: block;
+      padding: $spacing-medium $spacing-large;
+      border-top: 0.1rem solid #000;
+      border-bottom: 0.1rem solid #000;
+      max-height: 80rem;
+      max-width: 98.4rem;
+    }
   }
 }
 

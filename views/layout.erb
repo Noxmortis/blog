@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
-    <link href="http://fonts.googleapis.com/css?family=Alike+Angular" rel="stylesheet"/>
+    <title><%= @username %> :: Blog</title>
+    <link href="http://fonts.googleapis.com/css?family=<%= @title_font %>" rel="stylesheet"/>
+    <link href="http://fonts.googleapis.com/css?family=<%= @body_font %>" rel="stylesheet"/>
     <link href="/css/<%= @theme %>.css" rel="stylesheet"/>
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="/js/main.js"></script>
@@ -21,7 +22,7 @@
       <%= yield %>
     </div>
     <footer>
-      <p>&copy; 2014 Blog</p>
+      <p>&copy; 2014 <%= @username %></p>
     </footer>
   </body>
 </html>
