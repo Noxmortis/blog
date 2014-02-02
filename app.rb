@@ -17,5 +17,5 @@ get '/' do
 end
 
 get '/admin' do
-  erb :"admin/index"
+  erb :'admin/index'
 end
