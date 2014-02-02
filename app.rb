@@ -15,7 +15,9 @@ get '/css/:name.css' do
   render :scss, filename.to_sym, :layout => false, :views =>'./public/css/sass'
 end
 
-get '/' do
+get '/:id' do
+  # Post.create(owner: 'noxmortis', date: '2014-02-01 21:00:00', content: 'This is the content', tags: 'test, tag', likes: 23, private: 0)
+  @post = Post.find(params[:id])
   erb :index
 end
 
