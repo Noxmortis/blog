@@ -49,6 +49,12 @@ get 'post/destroy/:id' do
 end
 #
 
+# Tags
+get '/tagged/:tag' do
+  erb :index
+end
+#
+
 # Admin
 get '/admin' do
   erb :'admin/index'
@@ -63,4 +69,18 @@ end
 not_found do
   status 404
   erb :notfound
+end
+
+helpers do
+  def format_tags(tags)
+    if tags =~ /(, )+/
+      tags = tags.split ', '
+      tags.each_with_index do |t,i|
+        tags[i] = "<a href=\"/tagged/#{t}\">#{t}</a>"
+      end
+    else
+      tags = "<a href=\"/tagged/#{tags}\">#{tags}</a>"
+    end
+    tags
+  end
 end

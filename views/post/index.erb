@@ -7,7 +7,12 @@
   <time><%= post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
   <div class="clear"></div>
   <%= post.content %>
-  <p class="tags"><%= post.tags %></p>
+  <ul class="tags">
+    <% tags = format_tags post.tags %>
+    <% tags.each do |t| %>
+      <li><%= t %></li>
+    <% end %>
+  </ul>
   <p class="likes"><%= post.likes %> likes</p>
   <% if post.title %></section><% end %>
 </div>
