@@ -4,10 +4,11 @@
   <section>
     <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
   <% end %>
-  <%= post.date.strftime('%Y-%m-%d %H:%M') %>
+  <time><%= post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
+  <div class="clear"></div>
   <%= post.content %>
-  <%= post.tags %>
-  <%= post.likes %>
+  <p class="tags"><%= post.tags %></p>
+  <p class="likes"><%= post.likes %> likes</p>
   <% if post.title %></section><% end %>
 </div>
 <% end %>
