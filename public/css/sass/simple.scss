@@ -2,6 +2,9 @@ $spacing-small: 0.5rem;
 $spacing-medium: 1rem;
 $spacing-large: 2rem;
 
+$title-font: "Alike Angular", serif;
+$body-font: "Anaheim", Arial, Helvetica, sans-serif;
+
 *{
   margin: 0;
   padding: 0;
@@ -12,16 +15,8 @@ html{
 }
 
 body{
-  font-family: 'Anaheim', Arial, Helvetica, sans-serif;
+  font-family: $body-font;
   font-size: 1.8rem;
-}
-
-h1, h2, h3, h4, h5, h6{
-  font-family: "Alike Angular", serif;
-}
-
-a{
-  text-decoration: none;
 }
 
 header, nav, #content, footer{
@@ -160,4 +155,64 @@ footer{
 
 .clear{
   clear: both;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $title-font;
+}
+
+a{
+  text-decoration: none;
+}
+
+// Form Elements
+form{
+  border: 0.1rem solid #AAA;
+  background-color: #F4F4F4;
+  margin-top: $spacing-medium;
+  padding: $spacing-medium;
+}
+
+label, input, textarea{
+  display: block;
+}
+
+label{
+  margin-top: $spacing-medium;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select{
+  padding: $spacing-small;
+  border: 0.1rem solid #DDD;
+  box-shadow: 0 0 $spacing-small #EEE inset;
+
+  &:hover, &:active, &:focus{
+    border: 0.1rem solid #888;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select[size]{
+  width: 40rem;
+}
+
+input[type="submit"], input[type="image"], button{
+  background-color: #ECF0F1;
+  border: 0.1rem solid darken(#FFF, 30%);
+  transition: all 200ms ease-in-out 0s;
+  color: #333;
+  margin-top: $spacing-large;
+  padding: $spacing-small 2.1rem;
+  font-family: $body-font;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus{
+    background-color: #BDC3C7;
+    border: 0.1rem solid darken(#FFF, 50%);
+  }
 }

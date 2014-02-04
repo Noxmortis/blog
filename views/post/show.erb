@@ -1,0 +1,17 @@
+<div class="post">
+  <% if @post.title %>
+  <section>
+    <h2><%= @post.title %></h2>
+  <% end %>
+  <time><%= @post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
+  <div class="clear"></div>
+  <%= @post.content %>
+  <ul class="tags">
+    <% tags = format_tags @post.tags %>
+    <% tags.each do |t| %>
+      <li><%= t %></li>
+    <% end %>
+  </ul>
+  <p class="likes"><%= @post.likes %> likes</p>
+  <% if @post.title %></section><% end %>
+</div>

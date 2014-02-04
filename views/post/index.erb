@@ -2,7 +2,7 @@
 <div class="post">
   <% if post.title %>
   <section>
-    <h2><a href="/post/<%= post.id %>"><%= post.title %></a></h2>
+    <h2><a href="/post/show/<%= post.id %>"><%= post.title %></a></h2>
   <% end %>
   <time><%= post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
   <div class="clear"></div>

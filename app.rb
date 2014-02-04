@@ -28,23 +28,29 @@ get '/post' do
   erb :'post/index'
 end
 
-get '/post/:id' do
+get '/post/show/:id' do
+  @post = Post.find params[:id]
   erb :'post/show'
 end
 
-get 'post/edit/:id' do
+get '/post/new' do
+  @post = Post.new
+  erb :'post/new'
+end
+
+get '/post/edit/:id' do
   erb :'post/edit'
 end
 
-post 'post/create' do
-  
+post '/post/create' do
+  @post = params[:post]  
 end
 
-post 'post/update' do
-
+post '/post/update' do
+  @post = params[:post]
 end
 
-get 'post/destroy/:id' do
+get '/post/destroy/:id' do
 
 end
 #
