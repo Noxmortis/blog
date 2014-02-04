@@ -34,7 +34,6 @@ get '/post/show/:id' do
 end
 
 get '/post/new' do
-  @post = Post.new
   erb :'post/new'
 end
 
