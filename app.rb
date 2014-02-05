@@ -67,7 +67,9 @@ post '/post/update' do
 end
 
 get '/post/destroy/:id' do
-
+  Post.find(params[:id]).destroy
+  @message = "Deleted post ##{params[:id]}"
+  erb :'admin/index'
 end
 #
 
