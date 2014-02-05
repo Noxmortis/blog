@@ -106,7 +106,7 @@ helpers do
     tags
   end
 
-  def destroy_link(obj)
-    "<p class=\"destroy\"><a href=\"/post/destroy/#{obj.id}\" title=\"Delete post \##{obj.id}\">X</a></p>" if obj.owner == @user
+  def destroy_link(obj, obj_name)
+    "<p class=\"destroy\"><a href=\"/post/destroy/#{obj.id}\" title=\"Delete #{obj_name} \##{obj.id}\">X</a></p>" if obj.owner == @user
   end
 end
