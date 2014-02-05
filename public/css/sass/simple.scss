@@ -117,6 +117,14 @@ nav{
       
     }
 
+    .destroy{
+      text-align: right;
+      
+      a{
+        color: #B50000;
+      }
+    }
+
     img{
       margin: 0 auto;
       display: block;
@@ -143,6 +151,12 @@ nav{
 
 footer{
 
+}
+
+#message{
+  background-color: #333;
+  color: #CCC;
+  padding: $spacing-small $spacing-medium;
 }
 
 .float-left{
@@ -197,6 +211,16 @@ input[type="text"], input[type="number"], input[type="password"], input[type="em
 
 input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select[size]{
   width: 40rem;
+}
+
+input[type="checkbox"]{
+  border: 0.1rem solid #DDD;
+  float: left;
+  margin: 1.5rem  $spacing-small 0 0;
+
+  &:hover, &:active, &:focus{
+    border: 0.1rem solid #888;
+  }
 }
 
 input[type="submit"], input[type="image"], button{

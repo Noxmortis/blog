@@ -4,8 +4,10 @@ require 'sinatra/activerecord'
 require './config/environments'
 require './models/post'
 
+require 'pp' # Temp
+
 before do
-  @username = 'noxmortis'
+  @user = 'noxmortis'
   # Get these from config file later on
   @theme = 'simple'
   @title_font = 'Alike+Angular'
@@ -23,13 +25,13 @@ get '/' do
 end
 
 # Posts
-get '/post' do
-  @posts = Post.all
+get '/:user/post' do
+  @posts = Post.where(owner: params[:user], private: false).order('id DESC')
   erb :'post/index'
 end
 
 get '/post/show/:id' do
-  @post = Post.find params[:id]
+  @post = Post.find(params[:id])
   erb :'post/show'
 end
 
@@ -38,11 +40,26 @@ get '/post/new' do
 end
 
 get '/post/edit/:id' do
+  @post = Post.find(params[:id])
   erb :'post/edit'
 end
 
 post '/post/create' do
-  @post = params[:post]  
+  @_post = params[:post]
+  @_post['private'] = '0' if @_post['private'] != '1'
+  @_post['owner'] = @user
+  @_post['likes'] = '0'
+  @_post['date'] = Time.new
+
+  @post = Post.new(@_post)
+  
+  if @post.save
+    @message = 'Post successfully created.'
+    erb :'admin/index'
+  else
+    @message = 'Failed to save post.'
+    erb :'admin/index'
+  end
 end
 
 post '/post/update' do
@@ -87,5 +104,9 @@ helpers do
       tags = "<a href=\"/tagged/#{tags}\">#{tags}</a>"
     end
     tags
+  end
+
+  def destroy_link(obj)
+    "<p class=\"destroy\"><a href=\"/post/destroy/#{obj.id}\" title=\"Delete post \##{obj.id}\">X</a></p>" if obj.owner == @user
   end
 end

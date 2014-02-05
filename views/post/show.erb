@@ -13,5 +13,6 @@
     <% end %>
   </ul>
   <p class="likes"><%= @post.likes %> likes</p>
+  <%= destroy_link @post %>
   <% if @post.title %></section><% end %>
 </div>
