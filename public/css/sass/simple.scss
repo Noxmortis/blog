@@ -121,7 +121,22 @@ nav{
       text-align: right;
       
       a{
-        color: #B50000;
+        color: #FFBC1C;
+        background-color: #333;
+        padding: 0.1rem 0.5rem;
+        border-radius: 2.5rem;
+
+        &:link, &:visited{
+          border-bottom: none;
+        }
+
+        &:hover, &:active, &:focus{
+          color: #C3C3C3;
+        }
+
+        &:before{
+          content: "\2718";
+        }
       }
     }
 

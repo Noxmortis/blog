@@ -7,7 +7,7 @@ require './models/post'
 require 'pp' # Temp
 
 before do
-  @user = 'noxmortis'
+  @user = ''
   # Get these from config file later on
   @theme = 'simple'
   @title_font = 'Alike+Angular'
@@ -106,7 +106,7 @@ helpers do
   end
 
   def destroy_post_link(post)
-    "<p class=\"destroy\"><a href=\"/post/destroy/#{post.id}\" title=\"Delete post ##{post.id}\">X</a></p>" if post.owner == @user
+    "<p class=\"destroy\"><a href=\"/post/destroy/#{post.id}\" title=\"Delete post ##{post.id}\"></a></p>" if post.owner == @user
   end
 
   def assign_values
