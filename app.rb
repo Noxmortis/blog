@@ -7,7 +7,7 @@ require './models/post'
 require 'pp' # Temp
 
 before do
-  @user = ''
+  @user = 'noxmortis'
   # Get these from config file later on
   @theme = 'simple'
   @title_font = 'Alike+Angular'
@@ -59,8 +59,19 @@ post '/post/create' do
   end
 end
 
-post '/post/update' do
-  @post = params[:post]
+post '/post/update/:id' do
+  @_post = params[:post]
+  assign_values
+
+  @post = Post.find(params[:id])
+
+  if @post.update_attributes(@_post)
+    @message = 'Post successfully updated.'
+    erb :'admin/index'
+  else
+    @message = 'Failed to update post.'
+    erb :'admin/index'
+  end
 end
 
 get '/post/destroy/:id' do
@@ -114,5 +125,13 @@ helpers do
     @_post['owner'] = @user
     @_post['likes'] = '0'
     @_post['date'] = Time.new
+  end
+
+  def set_form_path(obj)
+    if obj
+      "/post/update/#{obj.id}"
+    else
+      '/post/create'
+    end
   end
 end
