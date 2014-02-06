@@ -46,10 +46,7 @@ end
 
 post '/post/create' do
   @_post = params[:post]
-  @_post['private'] = '0' if @_post['private'] != '1'
-  @_post['owner'] = @user
-  @_post['likes'] = '0'
-  @_post['date'] = Time.new
+  assign_values
 
   @post = Post.new(@_post)
   
@@ -108,7 +105,14 @@ helpers do
     tags
   end
 
-  def destroy_link(obj, obj_name)
-    "<p class=\"destroy\"><a href=\"/post/destroy/#{obj.id}\" title=\"Delete #{obj_name} \##{obj.id}\">X</a></p>" if obj.owner == @user
+  def destroy_post_link(post)
+    "<p class=\"destroy\"><a href=\"/post/destroy/#{post.id}\" title=\"Delete post ##{post.id}\">X</a></p>" if post.owner == @user
+  end
+
+  def assign_values
+    @_post['private'] = '0' if @_post['private'] != '1'
+    @_post['owner'] = @user
+    @_post['likes'] = '0'
+    @_post['date'] = Time.new
   end
 end

@@ -1,11 +1,11 @@
   <form method="POST" action="/post/create">
     <label for="post[title]">Title</label>
-    <input id="post[title]" name="post[title]" type="text"/>
+    <input id="post[title]" name="post[title]" type="text" <%= "value=\"#{@post.title}\"" if @post %>/>
     <label for="post[content]">Content</label>
-    <textarea id="post[content]" name="post[content]" rows="10" cols="50" required></textarea>
+    <textarea id="post[content]" name="post[content]" rows="10" cols="50" required><%= @post.content if @post %></textarea>
     <label for="post[tags]">Tags</label>
-    <input id="post[tags]" name="post[tags]" type="text" placeholder="tag1, tag2, tag3..."/>
-    <input id="post[private]" name="post[private]" type="checkbox" value="1"/>
+    <input id="post[tags]" name="post[tags]" type="text" <%= "value=\"#{@post.tags}\"" if @post %> placeholder="tag1, tag2, tag3..."/>
+    <input id="post[private]" name="post[private]" type="checkbox" value="1" <%= 'checked' if @post && @post.private == true %>/>
     <label for="post[private]">Private</label>
     <input type="submit" value="Submit"/>
   </form>
