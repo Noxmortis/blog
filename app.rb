@@ -127,11 +127,11 @@ helpers do
     @_post['date'] = Time.new
   end
 
-  def set_form_path(obj)
+  def set_form_path(obj, name)
     if obj
-      "/post/update/#{obj.id}"
+      "/#{name}/update/#{obj.id}"
     else
-      '/post/create'
+      "/#{name}/create"
     end
   end
 end

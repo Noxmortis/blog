@@ -1,4 +1,4 @@
-  <form method="POST" action="<%= set_form_path(@post) %>">
+  <form method="POST" action="<%= set_form_path(@post, 'post') %>">
     <label for="post[title]">Title</label>
     <input id="post[title]" name="post[title]" type="text" <%= "value=\"#{@post.title}\"" if @post %>/>
     <label for="post[content]">Content</label>
