@@ -1,0 +1,258 @@
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
+
+$title-font: "Trade Winds", serif;
+$body-font: "Anaheim", Arial, Helvetica, sans-serif;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: $body-font;
+  font-size: 1.8rem;
+  background-color: #3C3C3C;
+}
+
+header, nav, #content, footer{
+  width: 102.4rem;
+  margin: 0 auto;
+  margin-top: $spacing-large;
+}
+
+header{
+
+  h1{
+
+    a{
+      
+      &:link, &:visited{
+        color: #F90;
+        text-shadow: 0.2rem 0.2rem #000;
+      }
+
+      &:hover, &:active, &:focus{
+        color: #333;        
+      }
+    }
+  }
+}
+
+nav{
+  border-top: 0.1rem solid #000;
+  border-bottom: 0.3rem double #000;
+  height: 3.3rem;
+
+  ul{
+    margin: 0 auto;
+
+    li{
+      list-style: none outside none;
+      display: inline-block;
+      padding: $spacing-small 1.5rem;
+
+      &:hover{
+        border-bottom: 0.2rem solid #000;
+      }
+
+      a{
+        color: #000;
+      }
+    }
+  }
+}
+
+#content{
+  
+  .post{
+    margin-bottom: $spacing-large;
+    padding: $spacing-large 0;
+    border-top: 0.1rem dotted #000;
+    border-bottom: 0.1rem dotted #000;
+
+    h2{
+      text-shadow: 0.1rem 0.1rem #999;
+      margin-bottom: $spacing-medium;
+      display: inline-block;
+
+      a{
+        color: #000;
+
+        &:link, &:visited{
+          border-bottom: none;
+        }
+
+        &:hover, &:active, &:focus{
+          text-shadow: 0.1rem 0.1rem #FFF;
+        }
+      }
+    }
+
+    time{
+      float: right;
+    }
+
+    .tags{
+      margin-bottom: $spacing-small;
+
+      li{
+        display: inline;
+
+        &:after{
+          content: ", ";
+        }
+
+        &:last-child:after{
+          content: "";
+        }
+      }
+    }
+
+    .likes{
+      
+    }
+
+    .destroy{
+      text-align: right;
+      
+      a{
+        color: #FFBC1C;
+        background-color: #333;
+        padding: 0.1rem 0.5rem;
+        border-radius: 2.5rem;
+
+        &:link, &:visited{
+          border-bottom: none;
+        }
+
+        &:hover, &:active, &:focus{
+          color: #C3C3C3;
+        }
+
+        &:before{
+          content: "\2718";
+        }
+      }
+    }
+
+    img{
+      margin: 0 auto;
+      display: block;
+      padding: $spacing-medium $spacing-large;
+      border-top: 0.1rem solid #000;
+      border-bottom: 0.1rem solid #000;
+      max-height: 80rem;
+      max-width: 98.4rem;
+    }
+    
+    a{
+      color: #000;
+
+      &:link, &:visited{
+        border-bottom: 0.1rem dotted #000;
+      }
+
+      &:hover, &:active, &:focus{
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+footer{
+
+}
+
+#message{
+  background-color: #333;
+  color: #CCC;
+  padding: $spacing-small $spacing-medium;
+}
+
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.clear{
+  clear: both;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $title-font;
+}
+
+a{
+  text-decoration: none;
+}
+
+// Form Elements
+form{
+  border: 0.1rem solid #AAA;
+  background-color: #F4F4F4;
+  margin-top: $spacing-medium;
+  padding: $spacing-medium;
+}
+
+label, input, textarea{
+  display: block;
+}
+
+label{
+  margin-top: $spacing-medium;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select{
+  padding: $spacing-small;
+  border: 0.1rem solid #DDD;
+  box-shadow: 0 0 $spacing-small #EEE inset;
+
+  &:hover, &:active, &:focus{
+    border: 0.1rem solid #888;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select[size]{
+  width: 40rem;
+}
+
+input[type="checkbox"]{
+  border: 0.1rem solid #DDD;
+  float: left;
+  margin: 1.5rem  $spacing-small 0 0;
+
+  &:hover, &:active, &:focus{
+    border: 0.1rem solid #888;
+  }
+}
+
+input[type="submit"], input[type="image"], button{
+  background-color: #ECF0F1;
+  border: 0.1rem solid darken(#FFF, 30%);
+  transition: all 200ms ease-in-out 0s;
+  color: #333;
+  margin-top: $spacing-large;
+  padding: $spacing-small 2.1rem;
+  font-family: $body-font;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover, &:active, &:focus{
+    background-color: #BDC3C7;
+    border: 0.1rem solid darken(#FFF, 50%);
+  }
+}
