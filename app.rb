@@ -7,11 +7,11 @@ require './models/post'
 require 'pp' # Temp
 
 before do
-  @user = 'noxmortis'
-  # Get these from config file later on
-  @theme = 'dark'
-  @title_font = 'Trade+Winds'
-  @body_font = 'Alegreya+Sans'
+  test_config_file
+  @user = get_name
+  @theme = get_theme[0]
+  @title_font = get_theme[1]
+  @body_font = get_theme[2]
 end
 
 get '/css/:name.css' do
@@ -104,6 +104,32 @@ not_found do
 end
 
 helpers do
+  def test_config_file
+    begin
+      File.open('config/theme.conf', 'r') do |f|
+      end
+    rescue
+      File.open('config/theme.conf', 'w') do |f|
+        f.write("test\nsimple Alike+Angular Anaheim")
+      end
+    end
+  end
+
+  def get_name
+    File.open('config/theme.conf', 'r') do |f|
+      f.each_line do |line|
+        return line
+      end
+    end
+  end
+
+  def get_theme
+    File.open('config/theme.conf', 'r') do |f|
+      (2-1).times { f.gets }
+      return f.gets.split(' ')
+    end
+  end
+
   def format_tags(tags)
     if tags =~ /(, )+/
       tags = tags.split ', '
