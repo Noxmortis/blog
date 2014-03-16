@@ -9,9 +9,9 @@ require 'pp' # Temp
 before do
   @user = 'noxmortis'
   # Get these from config file later on
-  @theme = 'simple'
-  @title_font = 'Alike+Angular'
-  @body_font = 'Anaheim'
+  @theme = 'dark'
+  @title_font = 'Trade+Winds'
+  @body_font = 'Alegreya+Sans'
 end
 
 get '/css/:name.css' do

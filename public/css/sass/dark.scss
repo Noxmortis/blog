@@ -3,7 +3,7 @@ $spacing-medium: 1rem;
 $spacing-large: 2rem;
 
 $title-font: "Trade Winds", serif;
-$body-font: "Anaheim", Arial, Helvetica, sans-serif;
+$body-font: "Alegreya Sans", Arial, Helvetica, sans-serif;
 
 *{
   margin: 0;
@@ -18,12 +18,14 @@ body{
   font-family: $body-font;
   font-size: 1.8rem;
   background-color: #3C3C3C;
+  color: #666;
 }
 
 header, nav, #content, footer{
   width: 102.4rem;
   margin: 0 auto;
-  margin-top: $spacing-large;
+  background-color: #2D2D2D;
+  padding: $spacing-medium;
 }
 
 header{
@@ -31,23 +33,15 @@ header{
   h1{
 
     a{
-      
-      &:link, &:visited{
-        color: #F90;
-        text-shadow: 0.2rem 0.2rem #000;
-      }
-
-      &:hover, &:active, &:focus{
-        color: #333;        
-      }
+      color: #F90;
+      text-shadow: 0.2rem 0.2rem #000;
     }
   }
 }
 
 nav{
-  border-top: 0.1rem solid #000;
-  border-bottom: 0.3rem double #000;
   height: 3.3rem;
+  padding: 0 $spacing-medium;
 
   ul{
     margin: 0 auto;
@@ -62,7 +56,8 @@ nav{
       }
 
       a{
-        color: #000;
+        color: #F90;
+        text-shadow: 0.1rem 0.1rem #000;
       }
     }
   }
@@ -82,13 +77,14 @@ nav{
       display: inline-block;
 
       a{
-        color: #000;
 
         &:link, &:visited{
+          color: #000;
           border-bottom: none;
         }
 
         &:hover, &:active, &:focus{
+          color: #000;
           text-shadow: 0.1rem 0.1rem #FFF;
         }
       }
@@ -152,14 +148,13 @@ nav{
     }
     
     a{
-      color: #000;
 
       &:link, &:visited{
-        border-bottom: 0.1rem dotted #000;
+        color: #9C0;
       }
 
       &:hover, &:active, &:focus{
-        border-bottom: none;
+        color: #666;
       }
     }
   }
