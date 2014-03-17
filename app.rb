@@ -25,7 +25,7 @@ get '/' do
 end
 
 # Posts
-get '/:user/post' do
+get '/:user/posts' do
   @posts = Post.where(owner: params[:user], private: false).order('id DESC')
   erb :'post/index'
 end

@@ -21,7 +21,7 @@ body{
   color: #666;
 }
 
-header, nav, #content, footer{
+header, nav, #content, .post, footer{
   width: 102.4rem;
   margin: 0 auto;
   background-color: #2D2D2D;
@@ -35,6 +35,7 @@ header{
     a{
       color: #F90;
       text-shadow: 0.2rem 0.2rem #000;
+      border-bottom: 0.1rem #666 dashed;
     }
   }
 }
@@ -44,7 +45,7 @@ nav{
   padding: 0 $spacing-medium;
 
   ul{
-    margin: 0 auto;
+    margin-left: -$spacing-medium;
 
     li{
       list-style: none outside none;
@@ -52,7 +53,7 @@ nav{
       padding: $spacing-small 1.5rem;
 
       &:hover{
-        border-bottom: 0.2rem solid #000;
+        border-bottom: 0.2rem solid #1B1B1B;
       }
 
       a{
@@ -64,12 +65,13 @@ nav{
 }
 
 #content{
-  
+  background-color: transparent;
+  padding: 0;
+  width: 102.4rem + ($spacing-medium * 2);
+
   .post{
-    margin-bottom: $spacing-large;
-    padding: $spacing-large 0;
-    border-top: 0.1rem dotted #000;
-    border-bottom: 0.1rem dotted #000;
+    padding: $spacing-medium;
+    margin: $spacing-medium 0;
 
     h2{
       text-shadow: 0.1rem 0.1rem #999;
@@ -79,7 +81,7 @@ nav{
       a{
 
         &:link, &:visited{
-          color: #000;
+          color: #0A0A0A;
           border-bottom: none;
         }
 
