@@ -77,6 +77,7 @@ nav{
       text-shadow: 0.1rem 0.1rem #999;
       margin-bottom: $spacing-medium;
       display: inline-block;
+      color: #0A0A0A;
 
       a{
 
@@ -163,7 +164,7 @@ nav{
 }
 
 footer{
-
+  border-top: 1rem solid #333;
 }
 
 #message{
