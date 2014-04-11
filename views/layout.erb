@@ -9,20 +9,23 @@
     <script src="/js/main.js"></script>
   </head>
   <body>
-    <header>
-      <h1><a href="/"><%= params[:user] || @user %></a></h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/admin">CP</a></li>
-      </ul>
-    </nav>
-    <div id="content">
-      <%= yield %>
+    <div id="left">
+      <header>
+        <h1><a href="/"><%= params[:user] || @user %></a></h1>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/admin">CP</a></li>
+        </ul>
+      </nav>
     </div>
-    <footer>
-      <p>&copy; 2014 <%= params[:user] || @user %></p>
-    </footer>
+    <div id="right">
+      <%= yield %>
+      <div class="clear"></div>
+      <footer>
+        <p>&copy; 2014 <%= params[:user] || @user %></p>
+      </footer>
+    </div>
   </body>
 </html>

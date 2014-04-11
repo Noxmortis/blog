@@ -21,39 +21,47 @@ body{
   color: #666;
 }
 
-header, nav, #content, .post, footer{
-  width: 102.4rem;
-  margin: 0 auto;
+#left{
+  width: 20%;
   background-color: #2D2D2D;
-  padding: $spacing-medium;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+#right{
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 header{
+  padding: $spacing-medium;
+  border-bottom: 0.1rem #666 dashed;
 
   h1{
 
     a{
       color: #F90;
       text-shadow: 0.2rem 0.2rem #000;
-      border-bottom: 0.1rem #666 dashed;
     }
   }
 }
 
 nav{
-  height: 3.3rem;
-  padding: 0 $spacing-medium;
+  padding: $spacing-medium 0;
 
   ul{
-    margin-left: -$spacing-medium;
 
     li{
       list-style: none outside none;
-      display: inline-block;
-      padding: $spacing-small 1.5rem;
+      padding: $spacing-medium;
+      font-weight: bold;
 
       &:hover{
-        border-bottom: 0.2rem solid #1B1B1B;
+        background-color: #3C3C3C;
       }
 
       a{
@@ -64,106 +72,110 @@ nav{
   }
 }
 
-#content{
-  background-color: transparent;
-  padding: 0;
-  width: 102.4rem + ($spacing-medium * 2);
+.post{
+  display: block;
+  position: relative;
+  float: left;
+  width: 33.33%;
+  height: 33.33%;
+  
+  &:hover{
+    background-color: #2D2D2D;
+  }
+  
+  section{
+    height: 7.5rem;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 
-  .post{
-    padding: $spacing-medium;
-    margin: $spacing-medium 0;
+  h2{
+    text-shadow: 0.1rem 0.1rem #999;
+    margin-bottom: $spacing-small;
+    color: #0A0A0A;
 
-    h2{
-      text-shadow: 0.1rem 0.1rem #999;
-      margin-bottom: $spacing-medium;
-      display: inline-block;
-      color: #0A0A0A;
-
-      a{
-
-        &:link, &:visited{
-          color: #0A0A0A;
-          border-bottom: none;
-        }
-
-        &:hover, &:active, &:focus{
-          color: #000;
-          text-shadow: 0.1rem 0.1rem #FFF;
-        }
-      }
-    }
-
-    time{
-      float: right;
-    }
-
-    .tags{
-      margin-bottom: $spacing-small;
-
-      li{
-        display: inline;
-
-        &:after{
-          content: ", ";
-        }
-
-        &:last-child:after{
-          content: "";
-        }
-      }
-    }
-
-    .likes{
-      
-    }
-
-    .destroy{
-      text-align: right;
-      
-      a{
-        color: #FFBC1C;
-        background-color: #333;
-        padding: 0.1rem 0.5rem;
-        border-radius: 2.5rem;
-
-        &:link, &:visited{
-          border-bottom: none;
-        }
-
-        &:hover, &:active, &:focus{
-          color: #C3C3C3;
-        }
-
-        &:before{
-          content: "\2718";
-        }
-      }
-    }
-
-    img{
-      margin: 0 auto;
-      display: block;
-      padding: $spacing-medium $spacing-large;
-      border-top: 0.1rem solid #000;
-      border-bottom: 0.1rem solid #000;
-      max-height: 80rem;
-      max-width: 98.4rem;
-    }
-    
     a{
-
+      
       &:link, &:visited{
         color: #9C0;
+        text-shadow: 0.2rem 0.2rem #000;
       }
-
+      
       &:hover, &:active, &:focus{
         color: #666;
       }
     }
   }
+
+  .tags{
+    margin-bottom: $spacing-small;
+
+    li{
+      display: inline;
+
+      &:after{
+        content: ", ";
+      }
+
+      &:last-child:after{
+        content: "";
+      }
+    }
+  }
+
+  .destroy{
+    text-align: right;
+      
+    a{
+      color: #FFBC1C;
+      background-color: #333;
+      padding: 0.1rem 0.5rem;
+      border-radius: 2.5rem;
+
+      &:link, &:visited{
+        border-bottom: none;
+      }
+
+      &:hover, &:active, &:focus{
+        color: #C3C3C3;
+      }
+
+      &:before{
+        content: "\2718";
+      }
+    }
+  }
+
+  img{
+    margin: 0 auto;
+    display: block;
+    padding: $spacing-medium $spacing-large;
+    border-top: 0.1rem solid #000;
+    border-bottom: 0.1rem solid #000;
+    max-height: 80rem;
+    max-width: 98.4rem;
+  }
+    
+  a{
+
+    &:link, &:visited{
+      color: #9C0;
+    }
+
+    &:hover, &:active, &:focus{
+      color: #666;
+    }
+  }
 }
 
 footer{
+  background-color: #2D2D2D;
+  padding: $spacing-medium;
   border-top: 1rem solid #333;
 }
 
