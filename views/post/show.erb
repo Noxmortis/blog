@@ -1,19 +1,23 @@
-<div class="single post">
-  <% if @post.image %><img src="/img/<%= @post.image %>" alt="<%= @post.image %>"/><% end %>
-  <% if @post.title %>
-  <section>
-    <h2><%= @post.title %></h2>
-  <% end %>
-  <time><%= @post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
-  <div class="clear"></div>
-  <%= @post.content %>
-  <ul class="tags">
-    <% tags = format_tags @post.tags %>
-    <% tags.each do |t| %>
-      <li><%= t %></li>
-    <% end %>
-  </ul>
-  <p class="likes"><%= @post.likes %> likes</p>
-  <%= destroy_post_link @post %>
-  <% if @post.title %></section><% end %>
+<div class="single-post">
+  <% if @post.image %><img src="/img/<%= @post.image %>" alt="<%= @post.image %>" id="main-image"/><% end %>
+  <div class="bg">
+    <div class="center">
+      <% if @post.title %>
+      <section>
+        <h2><%= @post.title %></h2>
+      <% end %>
+      <time><%= @post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
+      <div class="clear"></div>
+      <%= @post.content %>
+      <ul class="tags">
+        <% tags = format_tags @post.tags %>
+        <% tags.each do |t| %>
+          <li><%= t %></li>
+        <% end %>
+      </ul>
+      <p class="likes"><%= @post.likes %> likes</p>
+      <%= destroy_post_link @post %>
+      <% if @post.title %></section><% end %>
+    </div>
+  </div>
 </div>
