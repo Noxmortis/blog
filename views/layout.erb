@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= params[:user] || @user %> :: Blog</title>
+    <title><%= @user %> :: Blog</title>
     <link href="http://fonts.googleapis.com/css?family=<%= @title_font %>" rel="stylesheet"/>
     <link href="http://fonts.googleapis.com/css?family=<%= @body_font %>" rel="stylesheet"/>
     <link href="/css/<%= @theme %>.css" rel="stylesheet"/>
@@ -11,7 +11,7 @@
   <body>
     <div id="left">
       <header>
-        <h1><%= params[:user] || @user %></h1>
+        <h1><%= @user %></h1>
       </header>
       <nav>
         <ul>
@@ -25,7 +25,7 @@
       <%= yield %>
       <div class="clear"></div>
       <footer>
-        <p>&copy; 2014 <%= params[:user] || @user %></p>
+        <p>&copy; 2014 <%= @user %></p>
       </footer>
     </div>
   </body>

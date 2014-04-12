@@ -14,10 +14,9 @@ ActiveRecord::Schema.define(version: 20140201200801) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
-    t.string   "owner"
     t.datetime "date"
-    t.string   "content"
     t.string   "image"
+    t.string   "content"
     t.string   "tags"
     t.integer  "likes"
     t.boolean  "private"

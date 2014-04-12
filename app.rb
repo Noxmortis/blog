@@ -25,8 +25,8 @@ get '/' do
 end
 
 # Posts
-get '/:user/posts' do
-  @posts = Post.where(owner: params[:user], private: false).order('id DESC')
+get '/posts' do
+  @posts = Post.where(private: false).order('id DESC')
   erb :'post/index'
 end
 
@@ -143,12 +143,11 @@ helpers do
   end
 
   def destroy_post_link(post)
-    "<p class=\"destroy\"><a href=\"/post/destroy/#{post.id}\" title=\"Delete post ##{post.id}\"></a></p>" if post.owner == @user
+    "<p class=\"destroy\"><a href=\"/post/destroy/#{post.id}\" title=\"Delete post ##{post.id}\"></a></p>"
   end
 
   def assign_values
     @_post['private'] = '0' if @_post['private'] != '1'
-    @_post['owner'] = @user
     @_post['likes'] = '0'
     @_post['date'] = Time.new
   end
