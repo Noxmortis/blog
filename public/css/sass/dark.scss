@@ -27,8 +27,8 @@ body{
   position: fixed;
   left: 2.5%;
   bottom: 2.5%;
-  z-index: 1;
-
+  z-index: 2;
+  border: 0.1rem solid #666;
 }
 
 #right{
@@ -57,7 +57,7 @@ header{
 nav{
   font-size: 1.6rem;
   padding: $spacing-medium 0;
-  border-top: 0.1rem #666 dashed;
+  border-top: 0.1rem dashed #666;
 
   ul{
 
@@ -160,6 +160,21 @@ nav{
 
 .single-post{
   padding-bottom: $spacing-medium;
+
+  #back{
+    padding: $spacing-small $spacing-medium;
+    display: inline;
+    background-color: #2D2D2D;
+    position: fixed;
+    right: 2.5%;
+    top: 2.5%;
+    z-index: 2;
+    border: 0.1rem solid #666;
+    
+    a:before{
+      content: "\2190";
+    }
+  }
 
   #main-image{
     width: 100%;
