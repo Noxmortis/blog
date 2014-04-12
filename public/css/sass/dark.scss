@@ -139,13 +139,18 @@ nav{
   }
 
   img{
-    margin: 0 auto;
     display: block;
-    padding: $spacing-medium $spacing-large;
-    border-top: 0.1rem solid #000;
-    border-bottom: 0.1rem solid #000;
-    max-height: 80rem;
-    max-width: 98.4rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  .overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
   }
 }
 
