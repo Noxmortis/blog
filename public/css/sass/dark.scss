@@ -22,19 +22,22 @@ body{
 }
 
 #left{
-  width: 20%;
+  width: 10%;
   background-color: #2D2D2D;
   position: fixed;
-  top: 0;
-  bottom: 0;
+  left: 5%;
+  bottom: 5%;
+  z-index: 1;
+
 }
 
 #right{
-  width: 80%;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 header{
@@ -42,25 +45,27 @@ header{
   border-bottom: 0.1rem #666 dashed;
 
   h1{
+    font-size: 1.8rem;
+    color: #F90;
+    text-shadow: 0.2rem 0.2rem #000;
 
-    a{
-      color: #F90;
-      text-shadow: 0.2rem 0.2rem #000;
+    &:hover, &:active, &:focus{
+      cursor: pointer;
     }
   }
 }
 
 nav{
+  font-size: 1.6rem;
   padding: $spacing-medium 0;
 
   ul{
 
     li{
       list-style: none outside none;
-      padding: $spacing-medium;
-      font-weight: bold;
+      padding: $spacing-small $spacing-medium;
 
-      &:hover{
+      &:hover, &:active, &:focus{
         background-color: #3C3C3C;
       }
 
@@ -70,15 +75,36 @@ nav{
       }
     }
   }
+
+  .close{
+    padding: 0.2rem 0.5rem 0.1rem 0.5rem;
+    border-radius: 2.5rem;
+    background-color: #3C3C3C;
+    color: #FFBC1C;
+    text-align: center;
+    width: 1.3rem;
+    display: block;
+    margin: 1rem auto 0 auto;
+    text-shadow: 0.1rem 0.1rem #000;
+    border: 0.1rem solid #1A1A1A;
+
+    &:before{
+      content: "\2718";
+    }
+
+    &:hover, &:active, &:focus{
+      cursor: pointer;
+    }
+  }
 }
 
 .post{
   display: block;
   position: relative;
   float: left;
-  width: 33.33%;
-  height: 33.33%;
-  
+  width: 25%;
+  height: 25%;
+
   &:hover{
     background-color: #2D2D2D;
   }
