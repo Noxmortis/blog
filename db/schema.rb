@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140201200801) do
     t.string   "owner"
     t.datetime "date"
     t.string   "content"
+    t.string   "image"
     t.string   "tags"
     t.integer  "likes"
     t.boolean  "private"

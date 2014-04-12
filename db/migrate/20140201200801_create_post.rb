@@ -5,6 +5,7 @@ class CreatePost < ActiveRecord::Migration
       t.string :owner
       t.datetime :date
       t.string :content
+      t.string :image
       t.string :tags
       t.integer :likes
       t.boolean :private
