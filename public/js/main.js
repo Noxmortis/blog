@@ -1,5 +1,5 @@
 $(function(){
-  var nav = $('nav *');
+  var nav = $('nav');
   nav.hide();
 
   $('header h1').on('click', function(){

@@ -42,7 +42,6 @@ body{
 
 header{
   padding: $spacing-medium;
-  border-bottom: 0.1rem #666 dashed;
 
   h1{
     font-size: 1.8rem;
@@ -58,6 +57,7 @@ header{
 nav{
   font-size: 1.6rem;
   padding: $spacing-medium 0;
+  border-top: 0.1rem #666 dashed;
 
   ul{
 
