@@ -83,7 +83,8 @@ end
 
 # Tags
 get '/tagged/:tag' do
-  erb :index
+  @posts = Post.where('tags LIKE ? AND private = ?', "%#{params[:tag]}%", false).order('id DESC')
+  erb :tagged
 end
 #
 

@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+<div class="post">
+  <% unless post.image.blank? %>
+    <img src="/img/<%= post.image %>" alt="<%= post.image %>"/>
+    <div class="overlay"></div>
+  <% end %>
+  <% if post.title %>
+  <section>
+    <h2><a href="/post/show/<%= post.id %>"><%= post.title %></a></h2>
+  <% end %>
+  <time><%= post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
+  <%= destroy_post_link post %>
+  <% if post.title %></section><% end %>
+</div>
+<% end %>
