@@ -104,24 +104,40 @@ nav{
   float: left;
   width: 25%;
   height: 25%;
+  text-align: center;
+  color: #BBB;
 
   &:hover{
     background-color: #2D2D2D;
   }
   
-  img+div+section{
-    color: #BBB;
-  }
-
-  section{
-    height: 7.5rem;
-    text-align: center;
+  &>a time, section{
     margin: auto;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+  }
+  
+  &>a time{
+    height: 2rem;
+  }
+
+  &>a, img+div+a{
+    text-shadow: 0.1rem 0.1rem #000;
+    
+    &:link, &:visited{
+      color: #9C0;
+    }
+
+    &:hover, &:active, &:focus{
+      color: #BBB;
+    }
+  }
+
+  section{
+    height: 7.5rem;
   }
 
   h2{

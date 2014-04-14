@@ -2,7 +2,7 @@
     <label for="post[title]">Title</label>
     <input id="post[title]" name="post[title]" type="text" <%= "value=\"#{@post.title}\"" if @post %>/>
     <label for="post[image]">Image</label>
-    <input id="post[image]" name="post[image]" type="text" <%= "value=\"#{@post.imageg}\"" if @post %>/>
+    <input id="post[image]" name="post[image]" type="text" <%= "value=\"#{@post.image}\"" if @post %>/>
     <label for="post[content]">Content</label>
     <textarea id="post[content]" name="post[content]" rows="10" cols="50" required><%= @post.content if @post %></textarea>
     <label for="post[tags]">Tags</label>

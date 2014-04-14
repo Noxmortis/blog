@@ -4,12 +4,17 @@
     <img src="/img/<%= post.image %>" alt="<%= post.image %>"/>
     <div class="overlay"></div>
   <% end %>
-  <% if post.title %>
+  <% unless post.title.blank? %>
   <section>
     <h2><a href="/post/show/<%= post.id %>"><%= post.title %></a></h2>
+  <% else %>
+    <a href="/post/show/<%= post.id %>" title="Go to post #<%= post.id %>">
   <% end %>
   <time><%= post.date.strftime('%b %d, %Y @ %I:%M %p') %></time>
-  <%= destroy_post_link post %>
-  <% if post.title %></section><% end %>
+  <% unless post.title.blank? %>
+    </section>
+  <% else %>
+    </a>
+  <% end %>
 </div>
 <% end %>
