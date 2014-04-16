@@ -1,9 +1,11 @@
 <div class="single-post">
   <div id="back"><a href="/posts">Back</a></div>
-  <% if @post.image %><img src="/img/<%= @post.image %>" alt="<%= @post.image %>" id="main-image"/><% end %>
+  <% unless @post.image.blank? %>
+  <img src="/img/<%= @post.image %>" alt="<%= @post.image %>" id="main-image"/>
+  <% end %>
   <div class="bg">
     <div class="center">
-      <% if @post.title %>
+      <% unless @post.title.blank? %>
       <section>
         <h2><%= @post.title %></h2>
       <% end %>
@@ -17,8 +19,9 @@
         <% end %>
       </ul>
       <p class="likes"><%= @post.likes %> likes</p>
-      <%= destroy_post_link @post %>
-      <% if @post.title %></section><% end %>
+      <% unless @post.title.blank? %>
+      </section>
+      <% end %>
     </div>
   </div>
 </div>
