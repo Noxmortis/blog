@@ -21,7 +21,8 @@ get '/css/:name.css' do
 end
 
 get '/' do
-  erb :index
+  # erb :index
+  redirect to '/posts'
 end
 
 # Posts
@@ -81,6 +82,11 @@ get '/post/destroy/:id' do
 end
 #
 
+# Login
+get '/login' do
+  erb :login
+end
+
 # Tags
 get '/tagged/:tag' do
   @posts = Post.where('tags LIKE ? AND private = ?', "%#{params[:tag]}%", false).order('id DESC')
@@ -94,9 +100,9 @@ get '/admin' do
 end
 #
 
-# Temp
 get '/seed' do
-  Post.create(title: 'Blog 1', owner: 'noxmortis', date: '2014-02-01 21:00:00', content: 'This is the content', tags: 'test, tag', likes: 23, private: 0)
+  # Redirect if not logged in as admin
+  Post.create(title: 'Blog 1', date: '2014-02-01 21:00:00', image: '', content: 'This is the content', tags: 'test, tag', likes: 23, private: 0)
 end
 
 not_found do
