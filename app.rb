@@ -3,6 +3,8 @@ require 'sass'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/post'
+require './models/comment'
+require './models/user'
 
 require 'pp' # Temp
 
@@ -102,7 +104,23 @@ end
 
 get '/seed' do
   # Redirect if not logged in as admin
-  Post.create(title: 'Blog 1', date: '2014-02-01 21:00:00', image: '', content: 'This is the content', tags: 'test, tag', likes: 23, private: 0)
+  User.create(name: 'root', password: 'root')
+
+  (1..100).each do |i|
+    if (i.divmod(5)[1] == 0)
+      image = 'bridge.jpg'
+    elsif (i.divmod(4)[1] == 0)
+      image = 'car.jpg'
+    elsif (i.divmod(2)[1] == 0)
+      image = 'road.jpg'
+    else
+      image = ''
+    end
+
+    Post.create(title: "Blog #{i}", date: '2014-02-01 21:00:00', image: image, content: 'This is the content', tags: "test, tag, #{i}", likes: i, private: 0)
+
+    Comment.create(post: i, user: 1, content: "This comment belongs to post #{i}")
+  end
 end
 
 not_found do
