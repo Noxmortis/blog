@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201200801) do
+ActiveRecord::Schema.define(version: 20140524000001) do
+
+  create_table "comments", force: true do |t|
+    t.integer "post"
+    t.integer "user"
+    t.string  "content"
+  end
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -20,6 +26,11 @@ ActiveRecord::Schema.define(version: 20140201200801) do
     t.string   "tags"
     t.integer  "likes"
     t.boolean  "private"
+  end
+
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "password"
   end
 
 end
