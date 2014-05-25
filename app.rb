@@ -35,6 +35,7 @@ end
 
 get '/post/show/:id' do
   @post = Post.find(params[:id])
+  @comments = Comment.where(post: params[:id])
   erb :'post/show'
 end
 
@@ -104,7 +105,7 @@ end
 
 get '/seed' do
   # Redirect if not logged in as admin
-  User.create(name: 'root', password: 'root')
+  User.create(name: 'root', password: 'root', image: 'road.jpg')
 
   (1..100).each do |i|
     if (i.divmod(5)[1] == 0)
@@ -117,9 +118,9 @@ get '/seed' do
       image = ''
     end
 
-    Post.create(title: "Blog #{i}", date: '2014-02-01 21:00:00', image: image, content: 'This is the content', tags: "test, tag, #{i}", likes: i, private: 0)
+    Post.create(title: "Blog #{i}", date: Time.now.strftime('%Y-%m-%d %H:%M'), image: image, content: 'This is the content', tags: "test, tag, #{i}", likes: i, private: 0)
 
-    Comment.create(post: i, user: 1, content: "This comment belongs to post #{i}")
+    Comment.create(post: i, user: 1, date: Time.now.strftime('%Y-%m-%d %H:%M'), content: "This comment belongs to post #{i}")
   end
 end
 
