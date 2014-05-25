@@ -1,5 +1,4 @@
 <div class="single-post">
-  <div id="back"><a href="/posts">Back</a></div>
   <% unless @post.image.blank? %>
   <img src="/img/<%= @post.image %>" alt="<%= @post.image %>" id="main-image"/>
   <% end %>
@@ -32,6 +31,8 @@
           </div>
         <% end %>
       <% end %>
+      <a href="/posts" id="back">Back</a>
+      <div class="clear"></div>
     </div>
   </div>
 </div>

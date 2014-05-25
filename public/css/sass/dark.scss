@@ -179,17 +179,19 @@ nav{
   padding-bottom: $spacing-medium;
 
   #back{
-    padding: $spacing-small $spacing-medium;
-    display: inline;
-    background-color: #2D2D2D;
-    position: fixed;
-    right: 2.5%;
-    bottom: 2.5%;
-    z-index: 2;
-    border: 0.1rem solid #666;
-    
-    a:before{
+    float: right;
+    font-size: 2rem;
+
+    &:before{
       content: "\2190";
+    }
+
+    &:after{
+      content: '.';
+      visibility: hidden;
+      display: block;
+      clear: both;
+      height: 0;
     }
   }
 
