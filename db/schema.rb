@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 20140524000001) do
 
   create_table "comments", force: true do |t|
-    t.integer "post"
-    t.integer "user"
-    t.string  "content"
+    t.integer  "post"
+    t.integer  "user"
+    t.datetime "date"
+    t.string   "content"
   end
 
   create_table "posts", force: true do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140524000001) do
   create_table "users", force: true do |t|
     t.string "name"
     t.string "password"
+    t.string "image"
   end
 
 end
