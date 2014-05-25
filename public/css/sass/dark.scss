@@ -185,14 +185,6 @@ nav{
     &:before{
       content: "\2190";
     }
-
-    &:after{
-      content: '.';
-      visibility: hidden;
-      display: block;
-      clear: both;
-      height: 0;
-    }
   }
 
   #main-image{
