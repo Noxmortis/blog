@@ -22,6 +22,16 @@
       <% unless @post.title.blank? %>
       </section>
       <% end %>
+      <% unless @comments.empty? %>
+        <% @comments.each do |c| %>
+          <div class="comment">
+            <% user = User.find(c.user) %>
+            <img src="/img/<%= user.image %>" alt="<%= user.name %>'s image" width="50" height="50" />
+            <span><%= user.name %></span>
+            <p><%= c.content %></p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
