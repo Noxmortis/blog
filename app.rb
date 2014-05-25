@@ -50,7 +50,7 @@ end
 
 post '/post/create' do
   @_post = params[:post]
-  assign_values
+  assign_post_values
 
   @post = Post.new(@_post)
   
@@ -65,7 +65,7 @@ end
 
 post '/post/update/:id' do
   @_post = params[:post]
-  assign_values
+  assign_post_values
 
   @post = Post.find(params[:id])
 
@@ -84,6 +84,27 @@ get '/post/destroy/:id' do
   erb :'admin/index'
 end
 #
+
+post '/comment/create/:id' do
+  referrer = request.referrer
+
+  _comment = params[:comment]
+  # assume user name is root
+  user = User.where(name: 'root')
+  _comment['user'] = user.id
+  _comment['post'] = params[:id]
+  _comment['date'] = Time.now.strftime('%Y-%m-%d %H:%M')
+
+  comment = Comment.new(_comment)
+  
+  if comment.save
+    @message = 'Comment successfully created.'
+    erb :"#{referrer}"
+  else
+    @message = 'Failed to save comment.'
+    erb :"#{referrer}"
+  end
+end
 
 # Login
 get '/login' do
@@ -172,10 +193,10 @@ helpers do
     "<p class=\"destroy\"><a href=\"/post/destroy/#{post.id}\" title=\"Delete post ##{post.id}\"></a></p>"
   end
 
-  def assign_values
+  def assign_post_values
     @_post['private'] = '0' if @_post['private'] != '1'
     @_post['likes'] = '0'
-    @_post['date'] = Time.new
+    @_post['date'] = Time.now.strftime('%y-%m-%d %H:%M')
   end
 
   def set_form_path(obj, name)
