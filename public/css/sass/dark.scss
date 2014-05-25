@@ -184,7 +184,7 @@ nav{
     background-color: #2D2D2D;
     position: fixed;
     right: 2.5%;
-    top: 2.5%;
+    bottom: 2.5%;
     z-index: 2;
     border: 0.1rem solid #666;
     
@@ -250,6 +250,27 @@ nav{
 
     &:hover, &:active, &:focus{
       color: #C3C3C3;
+    }
+  }
+
+  .comment{
+    background-color: #BBB;
+    color: #000;
+    margin: $spacing-medium 0;
+    padding: $spacing-small;
+    border: 0.1rem solid #000;
+    
+    img{
+      border: 0.1rem solid #000;
+      padding: 0.2rem;
+    }
+
+    span{
+      
+    }
+
+    p{
+      
     }
   }
 }
