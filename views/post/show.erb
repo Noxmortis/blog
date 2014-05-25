@@ -22,17 +22,30 @@
       </section>
       <% end %>
       <% unless @comments.empty? %>
-        <% @comments.each do |c| %>
-          <div class="comment">
-            <% user = User.find(c.user) %>
-            <img src="/img/<%= user.image %>" alt="<%= user.name %>'s image" width="50" height="50" />
-            <span><%= user.name %></span>
-            <p><%= c.content %></p>
-          </div>
-        <% end %>
+        <section>
+          <h3>Comments</h3>
+          <% @comments.each do |c| %>
+            <div class="comment">
+              <% user = User.find(c.user) %>
+              <img src="/img/<%= user.image %>" alt="<%= user.name %>'s image" width="50" height="50" />
+              <span><%= user.name %></span>
+              <p><%= c.content %></p>
+            </div>
+          <% end %>
+        </section>
       <% end %>
+      <section>
+        <h3>Add Comment</h3>
+        <!-- only show form if logged in -->
+        <form method="POST" action="/comment/create/<%= @post.id %>">
+          <label for="comment[content]">Content</label>
+          <textarea id="comment[content]" name="comment[content]" rows="10" cols="50" required></textarea>
+          <input type="submit" value="Submit"/>
+        </form>
+      </section>
       <a href="/posts" id="back">Back</a>
       <div class="clear"></div>
+      <p id="message"><%= @message %></p>
     </div>
   </div>
 </div>
