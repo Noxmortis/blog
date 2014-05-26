@@ -24,12 +24,17 @@ end
 
 get '/' do
   # erb :index
-  redirect to '/posts'
+  redirect to '/posts/page/1'
 end
 
 # Posts
 get '/posts' do
   @posts = Post.where(private: false).order('id DESC')
+  erb :'post/index'
+end
+
+get '/posts/page/:num' do
+  @posts = Post.where(private: false).limit(32).offset((params[:num].to_i - 1) * 32).order('id DESC')
   erb :'post/index'
 end
 

@@ -175,6 +175,26 @@ nav{
   }
 }
 
+#next-page{
+  display: block;
+  padding: $spacing-large;
+  margin: $spacing-medium 0;
+  text-align: center;
+  clear: both;
+  background-color: #2D2D2D;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 0.2rem 0.2rem #000;
+
+  &:link, &:visited{
+    color: #F90;
+  }
+
+  &:hover, &:active, &:focus{
+    background-color: #3C3C3C;
+  }
+}
+
 .single-post{
   padding-bottom: $spacing-medium;
 
