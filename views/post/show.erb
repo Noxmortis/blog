@@ -45,7 +45,9 @@
       </section>
       <a href="/posts" id="back">Back</a>
       <div class="clear"></div>
+      <% unless @message.blank? %>
       <p id="message"><%= @message %></p>
+      <% end %>
     </div>
   </div>
 </div>
